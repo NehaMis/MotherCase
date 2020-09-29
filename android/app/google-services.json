@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "421719605147",
+    "firebase_url": "https://mother-care-7f6c8.firebaseio.com",
+    "project_id": "mother-care-7f6c8",
+    "storage_bucket": "mother-care-7f6c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421719605147:android:8d45447150687e15a8eb3e",
+        "android_client_info": {
+          "package_name": "com.mothercare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "421719605147-4p5te4ka6t511r83sssh0pthdhf5i6b8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mothercare",
+            "certificate_hash": "4d97a099e13c43d75d49be67f2d9eb4a5d60b496"
+          }
+        },
+        {
+          "client_id": "421719605147-7127mcp35eibvpcncn2pouhmgscipvul.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHNhNIF9QHBp3Iqe2YpDNp9mvW2otMJ4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "421719605147-7127mcp35eibvpcncn2pouhmgscipvul.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
