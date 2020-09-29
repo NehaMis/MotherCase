@@ -10,12 +10,6 @@ export default class Recipe extends Component {
       super(props);
 
       this.objRecipe = {};
-
-      try{
-        Alert.alert(JSON.stringify(this.props.navigation.state))
-      }catch(error){
-        Alert.alert(JSON.stringify(error));
-      }
    
      
   }
@@ -24,7 +18,7 @@ export default class Recipe extends Component {
     return (
       <View style={styles.container}>
         <Text>
-            {this.objRecipe.name}
+        Development in process!
         </Text>
       </View>
     );

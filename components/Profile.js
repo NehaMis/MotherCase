@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
-import Logo from './Logo';
-import EmailAndPassword from './EmailAndPassword';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import firestore from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {px} from './util/dimensions';
 
 export default class Profile extends Component {
   state = {};
@@ -33,32 +31,51 @@ export default class Profile extends Component {
         <LinearGradient
           colors={['#1A2980', '#0172E8']}
           style={styles.linearGradient}>
-          <View style={styles.card}>
+          <View style={styles.profileCard}>
             <Image
               source={require('../assets/profile.png')}
               style={{
-                height: 100,
-                width: 100,
-                borderRadius: 50,
-                // margin: 10
-              }}></Image>
+                height: px(80),
+                width: px(80),
+                borderRadius: px(40),
+              }}
+            />
+            <Text style={{color: 'white', fontSize: px(22), marginTop: px(50)}}>
+              {this.state.name}
+            </Text>
           </View>
         </LinearGradient>
-        <View style={styles.foodDescription}>
-          <Text style={{color: 'black', fontSize: 26}}>Name: {this.state.name}</Text>
-          <Text style={{color: 'black', fontSize: 16}}>
-            Height:{'      '} {this.state.height}
-          </Text>
-          <Text style={{color: 'black', fontSize: 16}}>
-            Weight: {this.state.weight}
-          </Text>
-          <Text style={{color: 'black', fontSize: 16}}>
-            Pregnancy Week: {this.state.preg_weeks || 'NA'}
-          </Text>
-          {/* <Text style={{color: 'black', fontSize: 16}}>
-              Today Calories Took: {this.state.calories || 0}
-            </Text> */}
+
+        <View style={styles.card}>
+          <View style={{flexDirection: 'row', width: '100%', height: px(60)}}>
+            <View style={{width: '33%', alignItems: "center", justifyContent: "center"}}>
+              <Text style={{color: 'black', fontSize: px(16)}}>Height</Text>
+            </View>
+
+            <View style={{width: '33%', alignItems: "center", justifyContent: "center"}}>
+              <Text style={{color: 'black', fontSize: px(16)}}>Weight</Text>
+            </View>
+
+            <View style={{width: '33%', alignItems: "center", justifyContent: "center"}}>
+              <Text style={{color: 'black', fontSize: px(16)}}>Age</Text>
+            </View>
+          </View>
+
+          <View style={{flexDirection: 'row', height: px(30)}}>
+            <View style={{width: '33%', alignItems: "center", justifyContent: "center"}}>
+              <Text style={{color: 'black', fontSize: px(14)}}>{this.state.height} feet</Text>
+            </View>
+
+            <View style={{width: '33%', alignItems: "center", justifyContent: "center"}}>
+              <Text style={{color: 'black', fontSize: px(14)}}>{this.state.weight} Kg</Text>
+            </View>
+
+            <View style={{width: '33%', alignItems: "center", justifyContent: "center"}}>
+              <Text style={{color: 'black', fontSize: px(14)}}>{this.state.age || 'Not Set'}</Text>
+            </View>
+          </View>
         </View>
+
         <TouchableOpacity
           onPress={() => this.handleLogout()}
           style={{marginTop: 20, flexDirection: 'row'}}>
@@ -83,45 +100,32 @@ const styles = StyleSheet.create({
     //s justifyContent: 'center',
     alignItems: 'center',
   },
-  logoContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  emailAndPassword: {
-    flex: 2,
+  card: {
+    alignSelf: 'center',
+    backgroundColor: 'white',
+    minHeight: px(100),
+    width: '92%',
+    shadowOpacity: 0.8,
+    borderBottomWidth: 0,
+    shadowRadius: 2,
+    marginTop: px(10),
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowRadius: 2.22,
+    elevation: 3,
+    borderRadius: 10,
   },
   linearGradient: {
-    height: 250,
+    height: px(250),
     width: '100%',
-    padding: 7,
-    paddingLeft: 20,
+    padding: px(7),
     alignItems: 'center',
     justifyContent: 'center',
   },
-  header: {
-    height: 20,
-    width: '95%',
-    // alignItems: 'center',
-    justifyContent: 'center',
-  },
-  headerText: {
-    color: 'white',
-    fontSize: 18,
-  },
-  data: {
-    flexDirection: 'row',
-  },
-  foodImage: {
-    height: 65,
-    width: 65,
-    marginRight: 20,
-  },
-  foodDescription: {
-    justifyContent: 'center',
-    padding: 20,
-  },
-  card: {
+  profileCard: {
     justifyContent: 'center',
     alignItems: 'center',
   },

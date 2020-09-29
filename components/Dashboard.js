@@ -3,7 +3,7 @@ import {Image, View, TouchableOpacity, Text, Platform} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
+import {px} from "./util/dimensions";
 // // Modules
 import Profile from './Profile.js';
 import Menu from './Menu.js';
@@ -11,7 +11,10 @@ import Recipe from './Recipe.js';
 
 // Icons
 
- import diet from '../assets/diet.png';
+ import userDisable from '../assets/user-disable.png';
+ import userEnable from '../assets/user-enable.png';
+ import CookBookDisable from '../assets/cooking-book-disable.png';
+ import CookBookEnable from '../assets/cooking-book-enable.png';
 
 // import Home from '../../assets/Home.png';
 // import bmi from '../../assets/bmi.png';
@@ -32,7 +35,7 @@ const MenuBmiNavigator = ({navigation}) => (
 
         headerStyle: {
           backgroundColor: '#0172E8',
-          height: 50,
+          height: px(50),
         },
         headerTitleStyle: {
           alignSelf: 'center',
@@ -48,7 +51,7 @@ const MenuBmiNavigator = ({navigation}) => (
 
         headerStyle: {
           backgroundColor: '#0172E8',
-          height: 50,
+          height: px(50),
         },
         headerTitleStyle: {
           alignSelf: 'center',
@@ -75,7 +78,7 @@ const ProfileNavigator = ({navigation}) => (
 
         headerStyle: {
           backgroundColor: '#0172E8',
-          height: 50,
+          height: px(50),
         },
         headerTitleStyle: {
           alignSelf: 'center',
@@ -93,7 +96,7 @@ function MyTabBar({state, descriptors, navigation}) {
     <View
       style={{
         flexDirection: 'row',
-        height: 50,
+        height: px(50),
         borderTopWidth: 1,
         //   borderTopColor: '#ccc',
         backgroundColor: '#0172E8',
@@ -131,9 +134,10 @@ function MyTabBar({state, descriptors, navigation}) {
         let iConName = '';
         switch (label) {
           case 'Menu':
-            iConName = isFocused ? diet : diet;
+            iConName = isFocused ? CookBookEnable : CookBookDisable;
             break;
           default:
+            iConName = isFocused ? userEnable : userDisable;
             break;
         }
 
@@ -150,9 +154,10 @@ function MyTabBar({state, descriptors, navigation}) {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
+              height: px(50),
             }}>
-             {/* <Image source={iConName} style={{width: px(20), height: px(20)}} />  */}
-            <Text style={{color: isFocused ? 'white' : '#DC6099', fontSize: 17}}>{label}</Text>
+             <Image source={iConName} style={{width: px(20), height: px(20)}} /> 
+            <Text style={{color: isFocused ? 'white' : 'black', fontSize: px(14)}}>{label}</Text>
           </TouchableOpacity>
         );
       })}
@@ -172,7 +177,7 @@ export default () => {
         <Tabs.Screen
           name="Menu"
           component={MenuBmiNavigator}
-         tabBarIcon={diet}
+         tabBarIcon={CookBookDisable}
           options={{
             tabBarLabel: 'Menu',
           }}
