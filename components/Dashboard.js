@@ -31,7 +31,7 @@ const MenuBmiNavigator = ({navigation}) => (
       name="Menu"
       component={Menu}
       options={{
-        title: <Image source={require("../assets/logo.png")} style={{height: px(50), width: px(170)}} />,
+        title: "Menu",
         headerStyle: {
           backgroundColor: '#0172E8',
           height: px(50),
@@ -39,7 +39,6 @@ const MenuBmiNavigator = ({navigation}) => (
         headerTitleStyle: {
           alignSelf: 'center',
           color: 'white',
-          marginTop: px(-20)
         },
       }}
     />
