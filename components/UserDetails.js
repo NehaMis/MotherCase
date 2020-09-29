@@ -64,6 +64,7 @@ export default class UserDetails extends Component {
 
         <TextInput
           placeholder="Height"
+          keyboardType="number-pad"
           style={[
             styles.input,
             {
@@ -77,6 +78,7 @@ export default class UserDetails extends Component {
         />
         <TextInput
           placeholder="Weight"
+          keyboardType="number-pad"
           style={[
             styles.input,
             {
@@ -91,6 +93,7 @@ export default class UserDetails extends Component {
         />
         <TextInput
           placeholder="Pregnancy week"
+          keyboardType="number-pad"
           style={[
             styles.input,
             {
@@ -104,6 +107,7 @@ export default class UserDetails extends Component {
         />
         <TextInput
           placeholder="Age"
+          keyboardType="number-pad"
           style={[
             styles.input,
             {
