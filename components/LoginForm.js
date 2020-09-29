@@ -11,7 +11,7 @@ export default class LoginForm extends Component {
 
     render(){
         return(
-            <LinearGradient colors={['#1A2980', '#26D0CE']} style={styles.linearGradient}>
+          //  
             <View style ={styles.container}>
                 <View style ={styles.logoContainer}>
                     <Logo/>
@@ -21,7 +21,7 @@ export default class LoginForm extends Component {
                 </View>
             </View>
             
-            </LinearGradient>
+           // </LinearGradient>
         )
     }
 

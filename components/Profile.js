@@ -30,51 +30,46 @@ export default class Profile extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.card}>
-          {/* <LinearGradient
-            colors={['#1A2980', '#26D0CE']}
-            style={styles.linearGradient}>
-            <Text style={{color: 'white', fontSize: 22}}>
-              Personal Information
-            </Text>
-          </LinearGradient> */}
+        <LinearGradient
+          colors={['#1A2980', '#0172E8']}
+          style={styles.linearGradient}>
+          <View style={styles.card}>
             <Image
-                    source={require('../assets/profile.png')}
-                    style={{
-                      height: 65,
-                      width: 65,
-                      borderRadius: 30,
-                      // margin: 10
-                    }}></Image>
-          <View style={styles.foodDescription}>
-            <Text style={{color: 'black', fontSize: 26}}>
-               {this.state.name}
-            </Text>
-            <Text style={{color: 'black', fontSize: 16}}>
-              Height: {this.state.height}
-            </Text>
-            <Text style={{color: 'black', fontSize: 16}}>
-              Weight: {this.state.weight}
-            </Text>
-            <Text style={{color: 'black', fontSize: 16}}>
-              Pregnancy Week: {this.state.preg_weeks || 'NA'}
-            </Text>
-            {/* <Text style={{color: 'black', fontSize: 16}}>
+              source={require('../assets/profile.png')}
+              style={{
+                height: 100,
+                width: 100,
+                borderRadius: 50,
+                // margin: 10
+              }}></Image>
+          </View>
+        </LinearGradient>
+        <View style={styles.foodDescription}>
+          <Text style={{color: 'black', fontSize: 26}}>Name: {this.state.name}</Text>
+          <Text style={{color: 'black', fontSize: 16}}>
+            Height:{'      '} {this.state.height}
+          </Text>
+          <Text style={{color: 'black', fontSize: 16}}>
+            Weight: {this.state.weight}
+          </Text>
+          <Text style={{color: 'black', fontSize: 16}}>
+            Pregnancy Week: {this.state.preg_weeks || 'NA'}
+          </Text>
+          {/* <Text style={{color: 'black', fontSize: 16}}>
               Today Calories Took: {this.state.calories || 0}
             </Text> */}
-          </View>
         </View>
         <TouchableOpacity
           onPress={() => this.handleLogout()}
           style={{marginTop: 20, flexDirection: 'row'}}>
-             <Image
-                    source={require('../assets/logout.png')}
-                    style={{
-                      height: 35,
-                      width: 35,
-                      borderRadius: 30,
-                      // margin: 10
-                    }}></Image>
+          <Image
+            source={require('../assets/logout.png')}
+            style={{
+              height: 35,
+              width: 35,
+              borderRadius: 30,
+              // margin: 10
+            }}></Image>
           <Text style={{color: 'black', fontSize: 20}}> Logout</Text>
         </TouchableOpacity>
       </View>
@@ -97,14 +92,16 @@ const styles = StyleSheet.create({
     flex: 2,
   },
   linearGradient: {
-    // flex: 1,
+    height: 250,
+    width: '100%',
     padding: 7,
     paddingLeft: 20,
-    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   header: {
-    height: 50,
-    width: 380,
+    height: 20,
+    width: '95%',
     // alignItems: 'center',
     justifyContent: 'center',
   },
@@ -122,29 +119,10 @@ const styles = StyleSheet.create({
   },
   foodDescription: {
     justifyContent: 'center',
-    padding: 20
+    padding: 20,
   },
   card: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',
-    minHeight: 230,
-    width: '95%',
-    borderWidth: 1,
-    borderRadius: 5,
-    borderColor: '#ddd',
-    borderBottomWidth: 0,
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 10,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowRadius: 2.22,
-    elevation: 3,
   },
 });

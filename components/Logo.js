@@ -10,7 +10,7 @@ export default class Logo extends Component {
     render(){
         return(
             <View>
-             <Image source = {require('../assets/motherCare.png')}></Image>
+             <Image source = {require('../assets/logo.png')}></Image>
             </View> 
         )
     }

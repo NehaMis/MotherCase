@@ -8,6 +8,7 @@ import {
   Alert,
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
+import LinearGradient from 'react-native-linear-gradient';
 
 export default class EmailAndPassword extends Component {
   state = {
@@ -15,6 +16,7 @@ export default class EmailAndPassword extends Component {
     password: '',
     error: '',
     isSignUp: false,
+    color: 'white',
   };
 
   handleLogin() {
@@ -62,16 +64,24 @@ export default class EmailAndPassword extends Component {
       <View style={styles.container}>
         <TextInput
           placeholder="email"
-          style={styles.input}
+          style={[styles.input, {
+            borderColor: this.state.color,
+          }]}
           value={this.state.email}
+          onKeyPress={keyPress => this.setState({color: '#0172E8'}) }
           onChangeText={(email) => this.setState({email})}
         />
         <TextInput
           placeholder="Password"
-          style={styles.input}
+          secureTextEntry={true}
+          style={[styles.input, {
+            borderColor: this.state.color,
+          }]}
           value={this.state.password}
+          onKeyPress={keyPress => this.setState({color: '#0172E8'}) }
           onChangeText={(password) => this.setState({password})}
         />
+        {/* <LinearGradient colors={['#12c2e9',  '#f64f59']} style={styles.linearGradient}> */}
         <TouchableOpacity
           style={styles.buttonContainer}
           onPress={() => this.handleLogin()}>
@@ -79,9 +89,10 @@ export default class EmailAndPassword extends Component {
             {!this.state.isSignUp ? 'Login' : 'Register'}
           </Text>
         </TouchableOpacity>
+        {/* </LinearGradient> */}
         <Text style={[styles.errorText ,{ color: 'red'}]}>{this.state.error}</Text>
         <TouchableOpacity onPress={() => this.renderSignUp()}>
-          <Text style={[styles.errorText ,{ color: 'white'}]}>
+          <Text style={[styles.errorText ,{ color: 'black'}]}>
             {!this.state.isSignUp ? 'Dont have an account? Sign Up' : 'Already have an account? Login'}
           </Text>
         </TouchableOpacity>
@@ -101,11 +112,12 @@ const styles = StyleSheet.create({
   input: {
     height: 45,
     backgroundColor: 'white',
-    opacity: 0.5,
+  //  opacity: 0.5,
     paddingLeft: 10,
     marginBottom: 15,
-    borderRadius: 5,
+    borderRadius: 20,
     fontSize: 15,
+    borderWidth: 1,
   },
   errorText: {
     fontSize: 17,
@@ -120,10 +132,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   buttonContainer: {
-    backgroundColor: 'rgba(255, 255, 255,.5)',
-    opacity: 0.5,
-    borderRadius: 5,
+   backgroundColor: '#0052D0',
+  //  opacity: 0.5,
+    borderRadius: 20,
     padding: 15,
-    //   height: 45,
+       height: 45,
+       justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  linearGradient: {
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 20
   },
 });

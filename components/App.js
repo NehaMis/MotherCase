@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Alert} from 'react-native';
 import LoginForm from './LoginForm';
-import Articles from './Articles';
+import UserDetails from './UserDetails';
 import auth from '@react-native-firebase/auth';
 import Dashboard from './Dashboard';
 import firestore from '@react-native-firebase/firestore';
@@ -46,7 +46,7 @@ class App extends Component {
       case "false":
         return <LoginForm/>;
       case "article":
-        return <Articles onSubmit={(e)=> this.handleArticle(e)} />;
+        return <UserDetails onSubmit={(e)=> this.handleArticle(e)} />;
       default:
         return <Dashboard />;
     }

@@ -31,7 +31,7 @@ const MenuBmiNavigator = ({navigation}) => (
         title: 'Menu',
 
         headerStyle: {
-          backgroundColor: '#009FFD',
+          backgroundColor: '#0172E8',
           height: 50,
         },
         headerTitleStyle: {
@@ -47,7 +47,7 @@ const MenuBmiNavigator = ({navigation}) => (
         title: 'Recipe',
 
         headerStyle: {
-          backgroundColor: '#009FFD',
+          backgroundColor: '#0172E8',
           height: 50,
         },
         headerTitleStyle: {
@@ -74,7 +74,7 @@ const ProfileNavigator = ({navigation}) => (
         title: 'Profile',
 
         headerStyle: {
-          backgroundColor: '#009FFD',
+          backgroundColor: '#0172E8',
           height: 50,
         },
         headerTitleStyle: {
@@ -96,7 +96,7 @@ function MyTabBar({state, descriptors, navigation}) {
         height: 50,
         borderTopWidth: 1,
         //   borderTopColor: '#ccc',
-        backgroundColor: '#009FFD',
+        backgroundColor: '#0172E8',
       }}>
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
