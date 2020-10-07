@@ -8,6 +8,8 @@ import {px} from "./util/dimensions";
 import Profile from './Profile.js';
 import Menu from './Menu.js';
 import Recipe from './Recipe.js';
+import TrackDiet from './TrackDiet.js';
+import SearchFood from './SearchFood.js';
 
 // Icons
 
@@ -15,6 +17,7 @@ import Recipe from './Recipe.js';
  import userEnable from '../assets/user-enable.png';
  import CookBookDisable from '../assets/cooking-book-disable.png';
  import CookBookEnable from '../assets/cooking-book-enable.png';
+
 
 // import Home from '../../assets/Home.png';
 // import bmi from '../../assets/bmi.png';
@@ -62,7 +65,44 @@ const MenuBmiNavigator = ({navigation}) => (
 );
 
 
+const TrackDietStack = createStackNavigator();
 
+const TrackDietStackNavigator = ({navigation}) => (
+  <TrackDietStack.Navigator>
+    <TrackDietStack.Screen
+      name="TrackDiet"
+      component={TrackDiet}
+      options={{
+        title: 'Track Diet',
+
+        headerStyle: {
+          backgroundColor: '#0172E8',
+          height: px(50),
+        },
+        headerTitleStyle: {
+          alignSelf: 'center',
+          color: 'white',
+        },
+      }}
+    />
+     <TrackDietStack.Screen
+      name="SearchFood"
+      component={SearchFood}
+      options={{
+        title: 'Search Food',
+
+        headerStyle: {
+          backgroundColor: '#0172E8',
+          height: px(50),
+        },
+        headerTitleStyle: {
+          alignSelf: 'center',
+          color: 'white',
+        },
+      }}
+    />
+  </TrackDietStack.Navigator>
+);
 
 
 const ProfileStack = createStackNavigator();
@@ -168,7 +208,7 @@ export default () => {
   return (
     <NavigationContainer>
       <Tabs.Navigator
-        initialRouteName="Menu"
+        initialRouteName="Track Diet"
         tabBarOptions={{
           activeTintColor: 'black',
         }}
@@ -179,6 +219,14 @@ export default () => {
          tabBarIcon={CookBookDisable}
           options={{
             tabBarLabel: 'Menu',
+          }}
+        />
+         <Tabs.Screen
+          name="Track Diet"
+          component={TrackDietStackNavigator}
+        //  tabBarIcon={bmi}
+          options={{
+            tabBarLabel: 'Track Diet',
           }}
         />
          <Tabs.Screen
