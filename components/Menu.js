@@ -142,7 +142,7 @@ export default class Menu extends Component {
           renderItem={(e) => this.renderRecipe(e)}
           ItemSeparatorComponent={() => this.flatlistSeperator()}
           keyExtractor={(item, index) => {
-            return index;
+            return index + "";
           }}
           scrollEnabled={true}
         />
